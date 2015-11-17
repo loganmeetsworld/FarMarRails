@@ -8,6 +8,7 @@
 /.bundle
 
 # Ignore the default SQLite database.
+*.db
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
@@ -15,3 +16,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore .keep files 
+*.keep
