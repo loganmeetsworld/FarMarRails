@@ -11,10 +11,16 @@ Rails.application.routes.draw do
   end
 
   resources :markets do 
-  	resources :vendors 
+  	collection do 
+	  	get :show_markets
+	  end
+  	resources :vendors
   end
 
   resources :vendors do 
+  	collection do 
+	  	get :show_vendors
+	  end
   	resources :products do 
 	  	resources :sales 
   	end
