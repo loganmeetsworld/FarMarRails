@@ -13,7 +13,4 @@ class UsersController < ApplicationController
 	  @market = Market.find(params[:id])
 	end
 
-
-
-
 end
