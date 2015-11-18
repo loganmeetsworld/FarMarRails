@@ -11,8 +11,8 @@ body {
 }
 
 .main-nav {
-  background: rgba(181, 218, 219, .5);
-  color: #F38630;
+  background: rgba(190, 210, 162, .5);
+  color: rgb(85, 92, 43);
   position: relative;
   top: 0;
   height: 40px;
@@ -30,18 +30,39 @@ img {
   padding: 20px;
 }
 
-#market {
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 2em;
+  color: rgb(85, 110, 43); 
+}
+
+.market {
   background-image: url('market.png');
   background-size: 300px 200px;
 }
 
-#market_back {
+.vendor {
+  background-image: url('vendor.jpeg');
+  background-size: 300px 200px;
+}
+
+.new {
+  background-image: url('new.jpeg');
+  background-size: 300px 200px;
+}
+
+.edit {
+  background-image: url('update.jpeg');
+  background-size: 300px 200px;
+}
+
+.market_back, .vendor_back {
   padding: 20px;
   background: rgba(34,34,34,0.75);
   padding-bottom: 50px;
 }
 
-#market_back h2 { 
+.market_back h2, .vendor_back h2 { 
   text-align: center; 
   color: #fefefe; 
   font-family: 'Raleway', sans-serif;
@@ -49,27 +70,16 @@ img {
   font-weight: bold; 
 }
 
-#vendor {
-  background-image: url('vendor.jpeg');
-  background-size: 300px 200px;
+ul
+{
+    list-style-type: none;
 }
 
-#vendor_back {
-  padding: 20px;
-  background: rgba(34,34,34,0.75);
-}
-
-#vendor_back h2 { 
-  text-align: center; 
-  color: #fefefe; 
-  font-family: 'Raleway', sans-serif;
-  font-size: 40px;
-  font-weight: bold; 
-  margin-bottom: 50px;
-}
-
-a { text-decoration: none }
-a:hover { text-decoration: none }
+a { text-decoration: none;
+ color: rgb(0, 50, 20);   }
+a:hover { text-decoration: none;
+color: rgb(120, 92, 43); }
+a:visited { color: rgb(85, 92, 43); }  
 
 footer {
   position: relative;
@@ -79,6 +89,6 @@ footer {
   padding: .8rem;
   text-align: center;
   font-size: 18px;
-  background: rgba(181, 218, 219, .5);
+  background: rgba(190, 210, 162, .5);
   color: #000;
 }
