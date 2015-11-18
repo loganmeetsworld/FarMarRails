@@ -14,6 +14,7 @@ class MarketsController < ApplicationController
 
   def new
     @market = Market.new
+    @title = "New Market"
   end
 
   def create
@@ -21,10 +22,15 @@ class MarketsController < ApplicationController
     redirect_to '/markets/'
   end
 
+  def edit
+    @market = Market.find(params[:id])
+    @title = "Edit task"
+  end
+
   private
 
   def market_params
-  params.permit(task:[:name, :address, :city, :county, :state, :zip])
-end
+    params.permit(task:[:name, :address, :city, :county, :state, :zip])
+  end
 
 end
