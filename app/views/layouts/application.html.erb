@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<nav class="main-nav">
+			<%= link_to "Home Page", root %> | <%= link_to "List of All Markets", markets_users_path %> | <%= link_to "List of All Vendors", vendors_users_path %>
+		</nav>
+	</header>
 
 <%= yield %>
 

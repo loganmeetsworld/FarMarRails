@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users do 
   	collection do 
   		get 'markets'
+  		get 'vendors'
   	end
   	get 'show_market', on: :member
   end
