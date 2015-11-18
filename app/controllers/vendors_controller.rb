@@ -7,11 +7,11 @@ class VendorsController < ApplicationController
   	@vendor = Vendor.find(params[:id])
   end
 
-  def new 
+  def new
   	@vendor = Vendor.new
   end
 
-  def show_vendors 
+  def show_vendors
   	@vendors = Vendor.all
   end
 
@@ -21,10 +21,12 @@ class VendorsController < ApplicationController
 
   def destroy
 		@vendor = Vendor.destroy(params[:id])
-		redirect_to show_vendors_vendors_path
-	end 
 
-	def create 
+		redirect_to show_vendors_vendors_path
+	end
+
+
+	def create
 		Vendor.create(vendor_params[:vendor_id])
 		redirect_to "/show_vendors_vendors"
 	end
@@ -38,6 +40,9 @@ class VendorsController < ApplicationController
 
   	@vendor.update(vendor_params[:vendor])
   	redirect_to "/show_vendors_vendors"
+  end
+
+  def market_vendors_path
   end
 
   private

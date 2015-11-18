@@ -1,9 +1,13 @@
 <h1>Vendors List</h1>
-<table> 
+<table>
 	<th>Name</th>
 	<th>See Products</th>
 	<th colspan="2">Update</th>
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> 1a2c089ce6de036c4b4289feee74aa407881f5c7
 	<% @vendors.each do |vendor| %> 
 		<tr>
 			<td><%= link_to "#{vendor.name}", vendor_path(vendor.id) %></td>
@@ -11,6 +15,12 @@
 			<td class="update"><%= link_to "Edit", edit_vendor_path(vendor.id) %></td>
 		  <td class="update"><%= link_to 'Delete', vendor,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	  </tr>
+<<<<<<< HEAD
+	<% end %>
+
+</table>
+=======
 	<% end %> 
 
 </table>
+>>>>>>> 1a2c089ce6de036c4b4289feee74aa407881f5c7
