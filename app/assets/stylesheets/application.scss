@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|News+Gothic|Inconsolata|Droid+Sans|Raleway|Leckerli+One');
+
 body {
   text-align: center;
   background: rgba(255, 255, 255, .5);
@@ -42,6 +44,8 @@ img {
 #market_back h2 { 
   text-align: center; 
   color: #fefefe; 
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
   font-weight: normal; 
 }
 
@@ -58,9 +62,14 @@ img {
 #vendor_back h2 { 
   text-align: center; 
   color: #fefefe; 
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
   font-weight: normal; 
   margin-bottom: 50px;
 }
+
+a { text-decoration: none }
+a:hover { text-decoration: none }
 
 footer {
   position: relative;
