@@ -1,0 +1,7 @@
+<h1>List of Markets</h1>
+  <ul>
+
+  <% @markets.each do |market| %>
+    <li> <%= link_to "#{market.name}", show_market_user_path("#{market.id}") %></li>
+  <% end %>
+  </ul>
