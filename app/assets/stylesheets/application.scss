@@ -20,10 +20,12 @@ body {
   padding-top: 10px;
 }
 
-.market_button {
-  background-image: url(market.jpg)
-  width: 300px;
+img {
   height: 200px;
+  width: 300px;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  padding: 20px;
 }
 
 footer {
