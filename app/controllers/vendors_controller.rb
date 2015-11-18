@@ -15,10 +15,16 @@ class VendorsController < ApplicationController
   	@vendors = Vendor.all
   end
 
-  def delete
+  def show
+  	find_vendor
+  end
+
+  def destroy
 		@vendor = Vendor.destroy(params[:id])
-		redirect_to "/show_vendors_vendors"
+
+		redirect_to show_vendors_vendors_path
 	end
+
 
 	def create
 		Vendor.create(vendor_params[:vendor_id])
