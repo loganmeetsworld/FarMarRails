@@ -1,4 +1,10 @@
 <h1>Welcome to the Farmer's Market Finder!</h1>
 
-<div class="market_button"><%= link_to "Market", markets_path %></div>
-<div class="vendor button"><%= link_to "Vendor", vendors_path %></div>
+<div id="bg">
+  <div id="search">
+    <h2>Awesome freelancers at the right price</h2>
+			<%= link_to image_tag("market.png"), :method => 'get', :controller => 'markets', :id => 'market_button' %>
+ </div>
+</div>
+
+<%= link_to image_tag("vendor.jpeg"), :method => 'get', :controller => 'vendors', :id => 'vendor_button' %>
