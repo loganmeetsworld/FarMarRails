@@ -6,8 +6,8 @@
 
     <h2>Market</h2>
 
-			<%= link_to image_tag("market.png"), :method => 'get', :controller => 'markets', :id => 'market_button' %>
+			<%= link_to image_tag("market.png"), markets_path , :id => "market_button" %>
  </div>
 </div>
 
-<%= link_to image_tag("vendor.jpeg"), :method => 'get', :controller => 'vendors', :id => 'vendor_button' %>
+<%= link_to image_tag("vendor.jpeg"), vendors_path, :id => 'vendor_button' %>
