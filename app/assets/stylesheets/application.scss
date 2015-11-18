@@ -28,6 +28,40 @@ img {
   padding: 20px;
 }
 
+#market {
+  background-image: url('market.png');
+  background-size: 300px 200px;
+}
+
+#market_back {
+  padding: 20px;
+  background: rgba(34,34,34,0.75);
+  padding-bottom: 50px;
+}
+
+#market_back h2 { 
+  text-align: center; 
+  color: #fefefe; 
+  font-weight: normal; 
+}
+
+#vendor {
+  background-image: url('vendor.jpeg');
+  background-size: 300px 200px;
+}
+
+#vendor_back {
+  padding: 20px;
+  background: rgba(34,34,34,0.75);
+}
+
+#vendor_back h2 { 
+  text-align: center; 
+  color: #fefefe; 
+  font-weight: normal; 
+  margin-bottom: 50px;
+}
+
 footer {
   position: relative;
   right: 0;
