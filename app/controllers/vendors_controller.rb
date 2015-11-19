@@ -1,12 +1,9 @@
 class VendorsController < ApplicationController
 
   def index
-<<<<<<< HEAD
-    @market = Market.find(params[:id])
+    @market = Market.find(params[:market_id])
+    @vendors = @market.vendors
     render :show_vendor
-=======
-  	
->>>>>>> 940b269a114c720389a9d9c36269876c69312912
   end
 
   def find_vendor
