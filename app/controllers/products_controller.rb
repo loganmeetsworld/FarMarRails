@@ -15,28 +15,31 @@ class ProductsController < ApplicationController
 
 	def new
   	@product = Product.new
+  	find_vendor
   end
 
 	def destroy
 		@product = Product.destroy(params[:id])
 
-		redirect_to show_products_products_path
+		redirect_to vendor_products_path
 	end
 
 	def create
 		Product.create(product_params[:product])
-		redirect_to show_products_products_path
+		redirect_to vendor_products_path
 	end
 
   def edit
+  	find_vendor
   	find_product
   end
 
   def update
+  	find_vendor
   	find_product
 
   	@product.update(product_params[:product])
-  	redirect_to show_vendors_vendors_path
+  	redirect_to vendor_products_path
   end
 
 	private

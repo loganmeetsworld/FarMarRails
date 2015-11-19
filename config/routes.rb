@@ -2,6 +2,18 @@ Rails.application.routes.draw do
   # Home page
   root 'users#index'
 
+  resources :vendors do
+  	resources :products do
+	  	resources :sales, only: [:create, :new]
+  	end
+  	collection do
+	  	get :show_vendors
+	  end
+  	member do 
+  		resources :sales, only: [:index]
+  	end
+  end
+
   resources :users do
   	collection do
   		get 'markets'
@@ -14,18 +26,6 @@ Rails.application.routes.draw do
 	  	get :show_markets
 	  end
   	resources :vendors
-  end
-
-  resources :vendors do
-  	collection do
-	  	get :show_vendors
-	  end
-  	member do 
-  		resources :sales, only: [:index]
-  	end
-  	resources :products do
-	  	resources :sales, only: [:create, :new]
-  	end
   end
 
 end
