@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   resources :users do
   	collection do
   		get 'markets'
-  		get 'vendors'
+  		get 'markets/:id', action: "show_market", as: "show_market"
   	end
-  	get 'show_market', on: :member
   end
 
   resources :markets do
@@ -21,8 +20,11 @@ Rails.application.routes.draw do
   	collection do
 	  	get :show_vendors
 	  end
+  	member do 
+  		resources :sales, only: [:index]
+  	end
   	resources :products do
-	  	resources :sales
+	  	resources :sales, only: [:create, :new]
   	end
   end
 
