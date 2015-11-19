@@ -1,6 +1,8 @@
 class VendorsController < ApplicationController
 
   def index
+    @market = Market.find(params[:id])
+    render :show_vendor
   end
 
   def find_vendor
