@@ -1,6 +1,7 @@
 class VendorsController < ApplicationController
 
   def index
+  	
   end
 
   def find_vendor

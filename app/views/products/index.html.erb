@@ -1,0 +1,11 @@
+<h2><%= @vendor.name %>'s Products</h2>
+<% if @products.length == 0 %>
+	No Products for this vendor. 
+<% else %> 
+	<% @products.each do |product| %> 
+		<%= product.name %> 
+	<% end %>
+<% end %> 
+<br><br>
+<%= link_to "Back to Vendors", show_vendors_vendors_path %>
+<br><br>
