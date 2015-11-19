@@ -1,0 +1,50 @@
+<h2><%= @vendor.name %>'s Total Sales</h2>
+<% if @sales.length == 0 %>
+	No sales for this vendor. 
+<% else %>
+	<table>
+	<th>Sale Amount</th>
+	<th>Purchase Time</th>
+	<% @sales.each do |sale| %> 
+		<tr>
+			<td><li>$<%= sale.amount.to_f %></li></td>
+			<td><li><%= sale.purchase_time %></li></td>
+	 	</tr>
+	<% end %>
+	<table>
+	
+	<% a = [] %> 
+	<% @sales.each do |sale| %> 
+		<% a.push(sale.amount) %>
+	<% end %> 
+
+	<h4>Total sales for this vendor: $<%= a.inject(:+).to_f %> </h4>
+
+	<% @sales.each do |sale| %> 
+		<% if (sale.purchase_time.month == Time.now.month) && (sale.purchase_time.year == Time.now.year) %>
+			<h2><%= @vendor.name %>'s Current Month Sales</h2>
+				<table>
+					<th>Sale Amount</th>
+					<th>Purchase Time</th>
+					<% @sales.each do |sale| %> 
+						<tr>
+							<td><li>$<%= sale.amount.to_f %></li></td>
+							<td><li><%= sale.purchase_time %></li></td>
+					 	</tr>
+					<% end %>
+				</table>
+
+				<% b = [] %> 
+				<% @sales.each do |sale| %>  
+					<% b.push(sale.amount) %>
+				<% end %> 
+
+				<h4>Total sales for current month: $<%= b.inject(:+).to_f %> </h4>
+			<% end %> 
+		<% end %>
+<% end %> 
+
+<%= link_to "See Product List", vendor_products_path(@vendor.id) %>
+<br>
+<%= link_to "Back to the Vendors List", show_vendors_vendors_path %>
+<br><br>
