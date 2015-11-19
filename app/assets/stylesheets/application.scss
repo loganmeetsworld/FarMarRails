@@ -70,9 +70,31 @@ h1 {
   font-weight: bold; 
 }
 
+#special-button {
+  margin: 20px;
+  border-color: black;
+  background-color: white;
+  border-width: 1px;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
 ul
 {
-    list-style-type: none;
+  list-style-type: none;
+}
+
+textarea {
+  padding: 10px;
+}
+
+table {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding-bottom: 20px;
 }
 
 a { text-decoration: none;

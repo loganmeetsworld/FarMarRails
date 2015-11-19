@@ -1,10 +1,10 @@
 <h1> <%= @title %> </h1>
 <%= form_for @vendor do |f| %>
-  <%= f.label :name %>:
+  <%= f.label :vendor_name %>:
   <%= f.text_field :name %>
-
-  <%= f.label :number_of_emp %>:
-  <%= f.text_field :number_of_emp  %>
-
-  <%= f.submit %>
+	<br>
+  <%= f.label :number_of_employees %>:
+  <%= f.text_field :no_employees  %>
+	<br>
+  <%= @vendor.persisted? ? (f.submit value: "Update Vendor", id: 'special-button') : (f.submit value: "Add Vendor", id: 'special-button') %>
 <% end %>
