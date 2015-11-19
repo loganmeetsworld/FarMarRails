@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	end
 
 	def markets
-		@markets = Market.all
+		@markets = Market.all.order(:created_at).reverse_order
 	end
 
 	def show_market

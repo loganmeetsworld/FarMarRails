@@ -12,7 +12,7 @@ class VendorsController < ApplicationController
   end
 
   def show_vendors
-  	@vendors = Vendor.all
+  	@vendors = Vendor.all.order(:created_at).reverse_order
   end
 
   def show
@@ -27,8 +27,8 @@ class VendorsController < ApplicationController
 
 
 	def create
-		Vendor.create(vendor_params[:vendor_id])
-		redirect_to "/show_vendors_vendors"
+		Vendor.create(vendor_params[:vendor])
+		redirect_to show_vendors_vendors_path
 	end
 
   def edit
@@ -39,7 +39,7 @@ class VendorsController < ApplicationController
   	find_vendor
 
   	@vendor.update(vendor_params[:vendor])
-  	redirect_to "/show_vendors_vendors"
+  	redirect_to show_vendors_vendors_path
   end
 
   def market_vendors_path
@@ -48,6 +48,6 @@ class VendorsController < ApplicationController
   private
 
 	def vendor_params
-		params.permit(vendor:[:name, :market_id])
+		params.permit(vendor:[:name, :no_employees, :market_id])
 	end
 end
