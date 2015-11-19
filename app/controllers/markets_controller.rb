@@ -20,7 +20,7 @@ class MarketsController < ApplicationController
 
   def destroy
     Market.destroy(params[:id])
-    redirect_to '/markets/'
+    redirect_to show_markets_markets_path
   end
 
   def new

@@ -1,7 +1,7 @@
 <%= @title %>
 <%= form_for @market do |f| %>
   <%= f.label :name %>:
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :require => true %>
 	<br>
   <%= f.label :address %>:
   <%= f.text_field :address %>
