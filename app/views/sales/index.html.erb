@@ -26,18 +26,14 @@
 				<table>
 					<th>Sale Amount</th>
 					<th>Purchase Time</th>
-					<% @sales.each do |sale| %> 
 						<tr>
 							<td><li>$<%= sale.amount.to_f %></li></td>
 							<td><li><%= sale.purchase_time %></li></td>
 					 	</tr>
-					<% end %>
 				</table>
 
-				<% b = [] %> 
-				<% @sales.each do |sale| %>  
-					<% b.push(sale.amount) %>
-				<% end %> 
+				<% b = [] %>  
+				<% b.push(sale.amount) %>
 
 				<h4>Total sales for current month: $<%= b.inject(:+).to_f %> </h4>
 			<% end %> 
