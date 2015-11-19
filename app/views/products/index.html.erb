@@ -11,16 +11,16 @@
 				<td><li><%= product.name %></li></td>
 				<td><%= link_to 'Create',new_vendor_product_sale_path(product.vendor_id, product.id) %></td>
 				<td class="update"><%= link_to "Edit", edit_vendor_product_path(product.vendor.id, product.id) %></td>
-		 	 	<td class="update"><%= link_to 'Delete',vendor_product_path(product.vendor.id, product.id), method: :destroy, data: { confirm: 'Are you sure?' } %></td>
+		 	 	<td class="update"><%= link_to 'Delete',vendor_product_path(product.vendor.id, product.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		 	</tr>
 		<% end %>
 	<table>
 <% end %> 
 
-<br><br>
-<%= link_to "Create new Product", new_vendor_product_path %>
+<br>
+<%= link_to "Create New Product", new_vendor_product_path %>
 
 <br>
 
-<%= link_to "Back to Vendors", show_vendors_vendors_path %>
+<%= link_to "Back to the Vendors List", show_vendors_vendors_path %>
 <br><br>

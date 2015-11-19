@@ -1,0 +1,13 @@
+<h1> <%= @title %> </h1>
+
+<%= form_for @sale do |f| %>
+  <%= f.label :sale_amount %>:
+  <%= f.number_field :sale_amount %>
+	<br>
+	<%= f.label :purchase_time %>:
+	<%= f.date_time :purchase_time %>
+	<br>
+	<% :vendor_id = @vendor.id %> 
+	<% :product_id = @product.id %> 
+  <%= f.submit value: "Add Sale" %>
+<% end %>
