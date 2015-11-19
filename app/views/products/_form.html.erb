@@ -1,0 +1,9 @@
+<h1> <%= @title %> </h1>
+
+<%= form_for @product do |f| %>
+  <%= f.label :product_name %>:
+  <%= f.text_field :name %>
+	<br>
+  <%= @product.persisted? ? (f.submit value: "Update Product", id: 'special-button') : (f.submit value: "Add Product", id: 'special-button') %>
+<% end %>
+

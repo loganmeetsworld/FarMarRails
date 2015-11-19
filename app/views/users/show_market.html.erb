@@ -3,9 +3,8 @@
 <p> Name : <%= @market.name %> </p>
 <p> City: <%= @market.city %> </p>
 <h2> List of Vendors </h2>
-<ul>
-  <% @market.vendors.each do |vendor| %>
-    <li><%= vendor.name %> </li>
-  <% end %>
 
-</ul>
+<% @market.vendors.each do |vendor| %>
+  <li><%= vendor.name %> </li>
+<% end %>
+<br><br>

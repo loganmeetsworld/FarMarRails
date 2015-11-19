@@ -4,10 +4,42 @@ class ProductsController < ApplicationController
 		@vendor = Vendor.find(params[:vendor_id])
 	end
 
+	def find_product
+		@product = Product.find(params[:id])
+	end
+
 	def index
 		find_vendor
-		@products = Product.find(:vendor_id => @vendor.id)
+		@products = Product.where(vendor_id: @vendor.id)
 	end
+
+	def new
+  	@product = Product.new
+  end
+
+	def destroy
+		@product = Product.destroy(params[:id])
+
+		redirect_to show_products_products_path
+	end
+
+	def create
+		Product.create(product_params[:product])
+		redirect_to show_products_products_path
+	end
+
+  def edit
+  	find_product
+  end
+
+  def update
+  	find_product
+
+  	@product.update(product_params[:product])
+  	redirect_to show_vendors_vendors_path
+  end
+
+	private
 
 	def product_params
 		params.permit(product: [:name, :vendor_id])
