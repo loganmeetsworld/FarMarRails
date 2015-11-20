@@ -11,12 +11,13 @@ body {
 }
 
 .main-nav {
-  background: rgba(190, 210, 162, .5);
-  color: rgb(85, 92, 43);
+  background: rgba(243, 222, 58, .3);
+  color: rgb(113,146,8);
   position: relative;
   top: 0;
   height: 60px;
   width: 100%;
+  font-weight: bold;
   text-align:center;
   font-size: 22px;
   padding-top: 10px;
@@ -31,9 +32,9 @@ img {
 }
 
 h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 2em;
-  color: rgb(85, 110, 43); 
+  font-family: 'Leckerli One', 'Lato', sans-serif;
+  font-size: 60px;
+  color: rgb(113,146,8); 
 }
 
 .market {
@@ -59,6 +60,12 @@ h1 {
 .market_back, .vendor_back {
   padding: 20px;
   background: rgba(34,34,34,0.75);
+  padding-bottom: 50px;
+}
+
+.market_back:hover, .vendor_back:hover {
+  padding: 20px;
+  background: rgba(34,34,34,0.85);
   padding-bottom: 50px;
 }
 
@@ -112,7 +119,7 @@ td, th {
 a { text-decoration: none;
  color: rgb(0, 50, 20);   }
 a:hover { text-decoration: none;
-color: rgb(120, 92, 43); }
+color: rgb(113,146,8); }
 a:visited { color: rgb(85, 92, 43); }  
 
 footer {
@@ -123,7 +130,7 @@ footer {
   padding: .8rem;
   text-align: center;
   font-size: 18px;
-  background: rgba(190, 210, 162, .5);
+  background: rgba(243, 222, 58, .3);
   color: #000;
   height: 60px;
 }
