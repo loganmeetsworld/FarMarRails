@@ -4,6 +4,7 @@ class Vendor < ActiveRecord::Base
 	has_many :sales
 
 	def self.search(query)
+		query.upcase
     where("name like ?", "%#{query}%") 
   end
 end
