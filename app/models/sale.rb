@@ -6,10 +6,9 @@ class Sale < ActiveRecord::Base
 		a = []
 		sales.each do |sale|
 			if !sale.amount.nil?
-				a.push(sale.amount)
+						a.push(sale.amount)
 			end
 		end
-
 		return a.inject(:+).to_f/100
 	end
 
@@ -21,9 +20,20 @@ class Sale < ActiveRecord::Base
 		end
 	end
 
+	def self.total_month(sales)
+		a= []
+		sales.each do |sale|
+			if Sale.current_month_sale(sale)
+				a.push(sale)
+			end
+		end
+		return Sale.add_total(a)
+	end
+
 	def self.no_sales(sales)
 		if sales.length == 0
 			return true
 		end
 	end
+
 end
