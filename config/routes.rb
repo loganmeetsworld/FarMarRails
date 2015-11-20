@@ -22,10 +22,16 @@ Rails.application.routes.draw do
   end
 
   resources :markets do
+  	get 'show_vendors', action: "show_vendors", as: "by_vendor"
+  	get 'new_vendor/', action: "new_vendor", as: "new_vendor"
+  	post 'create_vendor/', action: "create_vendor", as: "create_vendor"
+  	get 'edit_vendor/:id', action: "edit_vendor", as: "edit_vendor"
+  	patch 'update_vendor/:id', action: "update_vendor", as: "update_vendor"
+  	delete 'delete_vendor/:id', action: "delete_vendor", as: "delete_vendor"
+
   	collection do
 	  	get :show_markets
 	  end
-  	resources :vendors
   end
 
 end

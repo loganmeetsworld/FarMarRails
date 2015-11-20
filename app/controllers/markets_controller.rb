@@ -44,6 +44,46 @@ class MarketsController < ApplicationController
     redirect_to show_markets_markets_path
   end
 
+  def get_vendor
+  	get_market
+  	@vendor = Vendor.find(params[:id])
+  end
+
+  def show_vendors
+  	get_market
+  	@vendors = Vendor.where(market_id: @market.id)
+  end
+
+  def new_vendor
+  	get_market
+  	@vendor = Vendor.new
+  end
+
+  def create_vendor
+  	get_market
+  	Vendor.create(vendor_params[:vendor])
+  	redirect_to market_by_vendor_path(params[:market_id])
+	end
+
+  def update_vendor
+  	get_vendor
+  	get_market
+    if params[:market_id].nil?
+    	@vendor.update(vendor_params[:vendor])
+    	redirect_to market_by_vendor_path
+    else
+      @vendor.update(vendor_params[:vendor])
+      redirect_to market_by_vendor_path(params[:market_id])
+    end
+  end
+
+  def destroy_vendor
+  	get_market
+		@vendor = Vendor.destroy(params[:id])
+
+		redirect_to market_by_vendor_path(params[:market_id])
+	end
+
   private
 
   def market_params

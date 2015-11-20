@@ -2,10 +2,5 @@
 
 <p> Name : <%= @market.name %> </p>
 <p> City: <%= @market.city %> </p>
-<h2> List of Vendors </h2>
-<ul>
-  <% @market.vendors.each do |vendor| %>
-    <li><%= vendor.name %> </li>
-  <% end %>
-
-</ul>
+<h3> <%= link_to "See Vendors", market_by_vendor_path(@market) %> </h3>
+<h3> <%= link_to "Back to Markets", show_markets_markets_path %> </h3>
