@@ -1,6 +1,6 @@
 <h1> <%= @title %> </h1>
 
-<%= form_for @vendor do |f| %>
+<%= form_for [@market , @vendor] do |f| %>
   <%= f.label :vendor_name %>:
   <%= f.text_field :name, :required => true %>
 	<br>
@@ -9,7 +9,6 @@
 	<%= f.label :market_id, "Located at:" %>
 	<%= f.collection_select :market_id, Market.order(:name), :id, :name, :required => true %>
 	<br>
-	
+
   <%= @vendor.persisted? ? (f.submit value: "Update Vendor", id: 'special-button') : (f.submit value: "Add Vendor", id: 'special-button') %>
 <% end %>
-
