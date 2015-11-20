@@ -12,15 +12,12 @@
 	 	</tr>
 	<% end %>
 	<table>
-	
-	<% a = [] %> 
-	<% @sales.each do |sale| %> 
-		<% a.push(sale.amount) %>
-	<% end %> 
 
-	<h3>Total sales for this vendor: $<%= a.inject(:+).to_f %> </h3>
+	<h3>Total sales for this vendor: $<%= Sale.add_total(@sales) %> </h3>
 
 	<% @sales.each do |sale| %> 
+		<% sales = [] %> 
+		<% sales.push(sale) %> 
 		<% if !sale.purchase_time.nil? %> 
 			<% if (sale.purchase_time.month == Time.now.month) && (sale.purchase_time.year == Time.now.year) %>
 				<h2><%= @vendor.name %>'s Current Month Sales</h2>
@@ -33,10 +30,7 @@
 						 	</tr>
 					</table>
 
-					<% b = [] %>  
-					<% b.push(sale.amount) %>
-
-					<h3>Total sales for current month: $<%= b.inject(:+).to_f %> </h3>
+					<h3>Total sales for current month: $<%= Sale.add_total(sales) %> </h3>
 				<% end %>
 			<% end %>
 		<% end %> 
