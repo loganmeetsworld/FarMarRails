@@ -13,5 +13,15 @@ class Sale < ActiveRecord::Base
 		return a.inject(:+).to_f/100
 	end
 
+	def self.current_month_sale(sale)
+		if !sale.purchase_time.nil?
+			if (sale.purchase_time.month == Time.now.month) && (sale.purchase_time.year == Time.now.year)
+				return true
+			end
+		end
+	end
 
+	def self.no_sales(sales)
+		reutrn true if sales.length == 0
+	end
 end
