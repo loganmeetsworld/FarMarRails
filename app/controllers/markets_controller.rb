@@ -3,11 +3,7 @@ class MarketsController < ApplicationController
   before_action :get_market, only: [:edit, :show, :update]
 
   def get_market
-    @market = Market.find(params[:id])
-  end
-
-  def index
-
+    @market = Market.find(params[:market_id] || params[:id])
   end
 
   def show
@@ -56,6 +52,7 @@ class MarketsController < ApplicationController
 
   def new_vendor
   	get_market
+  	@form_url = market_create_vendor_path(@market, @vendor)
   	@vendor = Vendor.new
   end
 
@@ -64,6 +61,15 @@ class MarketsController < ApplicationController
   	Vendor.create(vendor_params[:vendor])
   	redirect_to market_by_vendor_path(params[:market_id])
 	end
+
+	def edit_vendor
+  	get_vendor
+  	get_market
+  	@form_url = market_update_vendor_path(@market, @vendor)
+  	if !params[:market_id].nil?
+      @market = Market.find(params[:market_id])
+   	end
+  end
 
   def update_vendor
   	get_vendor
@@ -77,7 +83,7 @@ class MarketsController < ApplicationController
     end
   end
 
-  def destroy_vendor
+  def delete_vendor
   	get_market
 		@vendor = Vendor.destroy(params[:id])
 

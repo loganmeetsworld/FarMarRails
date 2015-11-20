@@ -53,11 +53,4 @@ class VendorsController < ApplicationController
       redirect_to market_vendors_path(params[:market_id])
     end
   end
-
-
-  private
-
-	def vendor_params
-		params.permit(vendor:[:name, :no_employees, :market_id])
-	end
 end
