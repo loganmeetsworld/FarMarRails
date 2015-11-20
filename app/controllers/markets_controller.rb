@@ -90,6 +90,14 @@ class MarketsController < ApplicationController
 		redirect_to market_by_vendor_path(params[:market_id])
 	end
 
+	def search
+    if params[:search]
+      @markets_search = Market.search(params[:search]).order("created_at DESC")
+    else
+      @markets_search = Market.order("created_at DESC")
+    end
+   end
+
   private
 
   def market_params

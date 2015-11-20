@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   	member do 
   		resources :sales, only: [:index]
   	end
+
+  	collection do 
+	  	get :search
+	  end
   end
 
   resources :users do
@@ -30,6 +34,10 @@ Rails.application.routes.draw do
 
   	collection do
 	  	get :show_markets
+	  end
+
+	  collection do 
+	  	get :search
 	  end
   end
 

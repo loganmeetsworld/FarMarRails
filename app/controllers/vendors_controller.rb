@@ -53,4 +53,12 @@ class VendorsController < ApplicationController
       redirect_to market_vendors_path(params[:market_id])
     end
   end
+
+  def search
+    if params[:search]
+      @vendors_search = Vendor.search(params[:search]).order("created_at DESC")
+    else
+      @vendors_search = Vendor.order("created_at DESC")
+    end
+   end
 end
