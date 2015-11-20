@@ -23,8 +23,12 @@ class SalesController < ApplicationController
   end
 
   def create
-  	Sale.create(sale_params[:sale])
+  	sale = Sale.create(sale_params[:sale])
+  	amount = sale.amount*100
+  	sale.update(:amount => amount)
+
 		redirect_to vendor_products_path
+
   end
 
   private

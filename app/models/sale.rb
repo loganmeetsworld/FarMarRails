@@ -5,10 +5,13 @@ class Sale < ActiveRecord::Base
 	def self.add_total(sales)
 		a = []
 		sales.each do |sale|
-			a.push(sale.amount)
+			if !sale.amount.nil?
+				a.push(sale.amount)
+			end
 		end
 
 		return a.inject(:+).to_f/100
 	end
+
 
 end
