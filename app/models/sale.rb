@@ -22,6 +22,8 @@ class Sale < ActiveRecord::Base
 	end
 
 	def self.no_sales(sales)
-		reutrn true if sales.length == 0
+		if sales.length == 0
+			return true
+		end
 	end
 end
