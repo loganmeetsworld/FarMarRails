@@ -7,8 +7,8 @@
 	<th>Purchase Time</th>
 	<% @sales.each do |sale| %> 
 		<tr>
-			<td><li>$<%= sale.amount.to_f %></li></td>
-			<td><li><%= sale.purchase_time %></li></td>
+			<td><li>$<%= sale.amount.to_f/100 %></li></td>
+			<td><li><%= !sale.purchase_time.nil? ? sale.purchase_time : "N/A" %></li></td>
 	 	</tr>
 	<% end %>
 	<table>
@@ -18,30 +18,28 @@
 		<% a.push(sale.amount) %>
 	<% end %> 
 
-	<h4>Total sales for this vendor: $<%= a.inject(:+).to_f %> </h4>
+	<h3>Total sales for this vendor: $<%= a.inject(:+).to_f %> </h3>
 
 	<% @sales.each do |sale| %> 
-		<% if (sale.purchase_time.month == Time.now.month) && (sale.purchase_time.year == Time.now.year) %>
-			<h2><%= @vendor.name %>'s Current Month Sales</h2>
-				<table>
-					<th>Sale Amount</th>
-					<th>Purchase Time</th>
-					<% @sales.each do |sale| %> 
-						<tr>
-							<td><li>$<%= sale.amount.to_f %></li></td>
-							<td><li><%= sale.purchase_time %></li></td>
-					 	</tr>
-					<% end %>
-				</table>
+		<% if !sale.purchase_time.nil? %> 
+			<% if (sale.purchase_time.month == Time.now.month) && (sale.purchase_time.year == Time.now.year) %>
+				<h2><%= @vendor.name %>'s Current Month Sales</h2>
+					<table>
+						<th>Sale Amount</th>
+						<th>Purchase Time</th>
+							<tr>
+								<td><li>$<%= sale.amount.to_f/100 %></li></td>
+								<td><li><%= sale.purchase_time %></li></td>
+						 	</tr>
+					</table>
 
-				<% b = [] %> 
-				<% @sales.each do |sale| %>  
+					<% b = [] %>  
 					<% b.push(sale.amount) %>
-				<% end %> 
 
-				<h4>Total sales for current month: $<%= b.inject(:+).to_f %> </h4>
-			<% end %> 
-		<% end %>
+					<h3>Total sales for current month: $<%= b.inject(:+).to_f %> </h3>
+				<% end %>
+			<% end %>
+		<% end %> 
 <% end %> 
 
 <%= link_to "See Product List", vendor_products_path(@vendor.id) %>
