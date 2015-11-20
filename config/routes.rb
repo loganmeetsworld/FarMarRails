@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # Home page
   root 'users#index'
 
   resources :vendors do
