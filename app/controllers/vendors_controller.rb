@@ -38,7 +38,9 @@ class VendorsController < ApplicationController
 
   def edit
   	find_vendor
-    @market = Market.find(params[:market_id])
+  	if !params[:market_id].nil?
+      @market = Market.find(params[:market_id])
+   	end
   end
 
   def update
