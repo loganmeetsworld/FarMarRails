@@ -11,5 +11,4 @@ class Sale < ActiveRecord::Base
 		return a.inject(:+).to_f/100
 	end
 
-
 end
